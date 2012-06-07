@@ -1,0 +1,336 @@
+/* Primary Styles
+   Author: Max Degterev <me@maxdegterev.name>
+*/
+
+/* styling error popups */
+::-webkit-validation-bubble {}
+::-webkit-validation-bubble-arrow-clipper {}
+::-webkit-validation-bubble-arrow {}
+::-webkit-validation-bubble-message {}
+
+@-moz-document url-prefix() {
+    /*CSS Rules*/
+}
+
+@-moz-document url-prefix() {
+    h1 { font-family: arial; }
+}
+
+/* slideFade */
+.old { overflow:hidden; max-height:0; opacity:0; transition: all .3s ease-out }
+.new { max-height:999em; opacity:1 }
+
+.noselect {
+	-webkit-user-select: none;
+	 -khtml-user-select: none;
+	   -moz-user-select: none;
+		 -o-user-select: none;
+			user-select: none;
+}
+
+.mobile-scroll {
+	overflow:scroll;
+	-webkit-overflow-scrolling:touch;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+}
+input::-webkit-input-placeholder {
+    color: #999;
+}
+input:-moz-placeholder {
+    color: #999;
+}
+input[type=search] {
+	-webkit-appearance: none;
+}
+input[type=search]::-webkit-search-decoration {
+	display: none;
+}
+body {
+	text-rendering: optimizeLegibility;
+}
+
+/* sevetal floated cols with equal height */
+.colheightfixLOL {
+    margin-bottom: -1000px;
+    padding-bottom: 1000px;
+}
+
+pre.wrapfix {
+    white-space: pre;           /* CSS 2.0 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3.0 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP Printers */
+    word-wrap: break-word;      /* IE 5+ */
+}
+
+#canttouchthis {
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+			user-select: none;
+}
+
+.trigger3D {
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+
+/*	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);*/
+}
+
+.content-wrap {
+	-moz-font-feature-settings: "liga=1";
+	font-feature-settings: "liga=1";
+}
+.smallcaps {
+	font-variant: small-caps;
+	-moz-font-feature-settings: 'smcp=1,pnum=1,onum=1';
+	font-feature-settings: 'smcp=1,pnum=1,onum=1';
+}
+
+/* The magic part */
+.border-radius {
+	-webkit-border-radius: 10px;
+	   -moz-border-radius: 10px;
+			border-radius: 10px;
+}
+	.border-radius0 {
+		-webkit-border-radius: 10px 20px;
+		   -moz-border-radius: 10px 20px;
+				border-radius: 10px 20px;
+	}
+	.border-radius1 {
+		-webkit-border-radius: 25px 10px / 10px 25px;
+		   -moz-border-radius: 25px 10px / 10px 25px;
+				border-radius: 25px 10px / 10px 25px;
+	}
+	.border-radius2 {
+		-webkit-border-top-left-radius: 10px 30px;
+		-webkit-border-top-right-radius: 30px 100px;
+		-webkit-border-bottom-right-radius: 10px 30px;
+		-webkit-border-bottom-left-radius: 30px 100px;
+
+		-moz-border-radius-topleft: 10px 30px;
+		-moz-border-radius-topright: 30px 100px;
+		-moz-border-radius-bottomright: 10px 30px;
+		-moz-border-radius-bottomleft: 30px 100px;
+
+		border-top-left-radius: 10px 30px;
+		border-top-right-radius: 30px 100px;
+		border-bottom-right-radius: 10px 30px;
+		border-bottom-left-radius: 30px 100px;
+	}
+
+.different-borders {
+	border-width: 3px;
+	border-style: solid dashed dotted;
+	border-color: #ff0000 #00ff00 #0000ff #000000;
+}
+.outline-radius {
+	-webkit-outline-radius: 10px;
+	   -moz-outline-radius: 10px;
+			outline-radius: 10px;
+}
+
+.box-shadow {
+	-webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,1);
+	   -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,1);
+			box-shadow: 0 0 10px 0 rgba(0,0,0,1);
+}
+	.box-shadow-spread0 {
+		-webkit-box-shadow: 0 0 10px 5px rgba(0,0,0,1);
+		   -moz-box-shadow: 0 0 10px 5px rgba(0,0,0,1);
+			    box-shadow: 0 0 10px 5px rgba(0,0,0,1);
+	}
+	.box-shadow-spread1 {
+		-webkit-box-shadow: 0 0 10px 15px rgba(0,0,0,1);
+		   -moz-box-shadow: 0 0 10px 15px rgba(0,0,0,1);
+				box-shadow: 0 0 10px 15px rgba(0,0,0,1);
+	}
+
+.transition {
+	-webkit-transition: all 0.3s ease-in-out;
+	   -moz-transition: all 0.3s ease-in-out;
+		-ms-transition: all 0.3s ease-in-out;
+		 -o-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
+}
+
+.transform-Y {
+	-webkit-transform: rotateY(180deg);
+	   -moz-transform: rotateY(180deg);
+		 -o-transform: rotateY(180deg);
+		    transform: rotateY(180deg);
+}
+	.transform-X {
+		-webkit-transform: rotateX(180deg);
+		   -moz-transform: rotateX(180deg);
+			   -o-transform: rotateX(180deg);
+				   transform: rotateX(180deg);
+	}
+.scale {
+	-webkit-transform: scale(1.2);  /* Saf3.1+, Chrome */
+	   -moz-transform: scale(1.2);  /* FF3.5+ */
+		-ms-transform: scale(1.2);  /* IE9 */
+		 -o-transform: scale(1.2);  /* Opera 10.5 */
+			transform: scale(1.2);
+}
+
+.box {
+	display: -webkit-box;
+	display: -moz-box;
+	display: box;
+
+	-webkit-box-orient: horizontal;
+	   -moz-box-orient: horizontal;
+			   box-orient: horizontal;
+
+	-webkit-box-pack: center;
+	   -moz-box-pack: center;
+			   box-pack: center;
+
+	-webkit-box-align: center;
+	   -moz-box-align: center;
+			   box-align: center;
+}
+	.flex {
+		-webkit-box-flex: 1;
+		   -moz-box-flex: 1;
+				box-flex: 1;
+	}
+
+.resize {
+	-webkit-resize: vertical;
+	   -moz-resize: vertical;
+			   resize: vertical; /* vertical; horizontal; both;*/
+}
+
+.box-sizing {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		   box-sizing: border-box;
+}
+
+.columns {
+	-webkit-column-count: 3;
+	   -moz-column-count: 3;
+			column-count: 3;
+
+	-webkit-column-gap: 10px;
+	   -moz-column-gap: 10px;
+			column-gap: 10px;
+}
+
+.linear-gradient {
+	background-color: #ff0000;
+	background-image: -moz-linear-gradient(top, #ff0000, #00ff00); /* FF3.6 */
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #ff0000),color-stop(1, #00ff00)); /* Saf4+, Chrome */
+	background-image: -o-linear-gradient(top, #ff0000, #00ff00); /* Someday Opera*/
+	background-image: linear-gradient(top, #ff0000, #00ff00);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ff0000', EndColorStr='#00ff00'); /* IE6–IE9 */
+}
+	.radial-gradient {
+		background-color: #ff0000;
+		background-image: -moz-radial-gradient(50% 50% 90deg, circle closest-side, #ff0000, #00ff00); /* FF3.6 */
+		background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from(#ff0000), to(#00ff00)); /* Saf4+, Chrome */
+		background-image: -o-radial-gradient(50% 50% 90deg, circle closest-side, #ff0000, #00ff00); /* Someday Opera*/
+		background-image: radial-gradient(50% 50% 90deg, circle closest-side, #ff0000, #00ff00);
+	}
+.background-size { /* http://leaverou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/ */
+	background-color: #0ae;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent));
+	background-image: -moz-linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+	background-image: -o-linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+	background-image: linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+
+	-webkit-background-size: 50px 50px;
+	-moz-background-size: 50px 50px;
+	background-size: 50px 50px;
+}
+.background-clip { /* Background bleed fix. Maybe useful sometimes with rounded borders */
+	-webkit-background-clip: padding-box;
+	   -moz-background-clip: padding-box;
+			   background-clip: padding-box;
+}
+
+.opacity-half {
+	-khtml-opacity: .50;s
+	  -moz-opacity: .50;
+		   opacity: .50;
+
+	-ms-filter: "alpha(opacity=50)";
+		 filter: alpha(opacity=50);
+}
+	.opacity-full {
+		-khtml-opacity: 1;
+		  -moz-opacity: 1;
+			   opacity: 1;
+
+		-ms-filter: "alpha(opacity=100)";
+			filter:  alpha(opacity=100);
+	}
+
+.double-borders {
+	border: 1px solid #ff0000;
+
+	-webkit-box-shadow: 0 0 0 1px #00ff00;
+	   -moz-box-shadow: 0 0 0 1px #00ff00;
+	   		box-shadow: 0 0 0 1px #00ff00;
+
+}
+.triple-borders {
+	border: 1px solid #ff0000;
+
+	-webkit-box-shadow: 0 0 0 1px #00ff00, 0 0 0 2px #0000ff;
+	   -moz-box-shadow: 0 0 0 1px #00ff00, 0 0 0 2px #0000ff;
+	   		box-shadow: 0 0 0 1px #00ff00, 0 0 0 2px #0000ff;
+}
+.darkside {
+	padding: 30px 0;
+	background: #333;
+}
+	.button {
+		width: 80px;
+		height: 30px;
+		line-height: 30px;
+		margin: 30px auto !important;
+		text-align: center;
+		background: #222;
+		color: #eee;
+		border-width: 1px;
+		border-style: solid;
+		border-color: #999 #555 #444;
+	}
+.blur {
+	color: rgba(0,0,0,0);
+
+	font: normal 30px Georgia;
+
+	text-shadow: 0 0 10px black;
+}
+.gradient-stripes { /* http://leaverou.me/demos/css3-patterns.html */
+	background-color: #bada55;
+	background-image: -webkit-gradient(linear, 0 0, 100% 100%,
+							color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent),
+							color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)),
+							color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent),
+							to(transparent));
+	background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+						transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+						transparent 75%, transparent);
+	background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+						transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+						transparent 75%, transparent);
+	background-image: linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+						transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+						transparent 75%, transparent);
+
+	-webkit-background-size: 50px 50px;
+	-moz-background-size: 50px 50px;
+	background-size: 50px 50px; /* Controls the size of the stripes */
+}

@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule ^([a-z]=.*)  index.php?$1  [L,NE]
+</IfModule>
+
+<Files "config.php">
+	Order Deny,Allow
+	Deny from all
+</Files>
+
+<Files "groupsConfig.php">
+	Order Deny,Allow
+	Deny from all
+</Files>
