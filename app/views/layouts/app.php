@@ -28,20 +28,15 @@ $project = base_url();
 	*/?>
 	<meta http-equiv="cleartype" content="on">
 
-	<?php /* Minify script removed for easier development. Remember to turn it on for production! */ ?>
-	<!--<link rel="stylesheet" href="<?php echo $project; ?>css/normalize.css">-->
 	<link rel="stylesheet/less" type="text/css" href="<?php echo $project; ?>css/bootstrap/bootstrap.less">
 	<link rel="stylesheet/less" type="text/css" href="<?php echo $project; ?>css/style.less">
 
-	<?php /* You can define what files you want to load in /min/groupsConfig.php */ ?>
-	<?php /*	<link rel="stylesheet" href="<?php echo $project; ?>css/style.001.css">*/?>
-
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
 	
 	<?php /* Respond is a polyfill for min/max-width CSS3 Media Queries */ ?>
-	<!--<script src="<?php echo $project; ?>js/libs/respond.min.js"></script>-->
+	<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>-->
 	
-	<script src="<?php echo $project; ?>js/libs/less-1.2.0.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.3.0/less-1.3.0.min.js"></script>
 	<?php echo $this->tpl->get_header(); ?>
 
 </head>
@@ -78,13 +73,8 @@ $project = base_url();
 		<p><?php echo $layout_year.' &copy; '.$layout_company; ?></p>
 	</footer>
 
-	<?php /* Jquery
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-	*/?>
-
-	<?php /* Extend $.animate() to detect CSS transitions for Webkit, Mozilla and Opera and convert animations automatically. */ ?>
-	<?php /*	<script src="<?php echo $project; ?>js/libs/jquery.animate-enhanced.min.js"></script>*/?>
 
 	<script type='text/javascript' src='<?php echo $project; ?>js/steal/steal.js?app'></script>
 	<?php echo $this->tpl->get_footer(); ?>

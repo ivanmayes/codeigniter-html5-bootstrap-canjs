@@ -21,15 +21,14 @@
  
 // Checks for local.* domains and sets to development
 $domain = $_SERVER['HTTP_HOST'];
-$local = strpos($domain, "local.");
-if ($pos === false) {
+$local = strpos($domain, "local");
+if ($local !== false) {
 	define('ENVIRONMENT', 'development');
 }else{
 	// NOTE: Add a switch statement here if you need to 
 	// specify specific site's environments
 	define('ENVIRONMENT', 'production');
 }
-
 
 /*
  *---------------------------------------------------------------

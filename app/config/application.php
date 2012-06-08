@@ -1,9 +1,4 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-/*
- * Code by BrainCube.us - Smart solutions for the Web.
- * @author	Max Degterev <max@braincube.us>
- * @copyright (c) 2011 BrainCube
- */
  
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +21,7 @@ $config['start_year'] = '2012';
 | copyright notice
 |
 */
-$config['company_name'] = 'Owl.am';
+$config['company_name'] = 'Company Name';
 
 /* End of file application.php */
 /* Location: ./application/config/application.php */
@@ -38,20 +33,29 @@ $config['company_name'] = 'Owl.am';
 |--------------------------------------------------------------------------
 |
 | Any setup variables that need to change between dev, staging and production
-| copyright notice
 |
 */
 switch(ENVIRONMENT) {
-	case "staging":
+	case "production":
+		$config['facebook_app_id'] = '186544724784696';
+		$config['facebook_app_key'] = '186544724784696';
+		$config['facebook_app_secret'] = 'e4590db6841ad00b5bc077262bf854ae';
+		$config['tweet_consumer_key'] = '';
+		$config['tweet_consumer_secret'] = '';
+		$config['google_app_id'] = '';
 		define("FBAPPID", "186544724784696");
 		define("FBAPPSECRET", "e4590db6841ad00b5bc077262bf854ae");
 		
 	break;
 	default:
+		$config['facebook_app_id'] = '186544724784696';
+		$config['facebook_app_key'] = '186544724784696';
+		$config['facebook_app_secret'] = 'e4590db6841ad00b5bc077262bf854ae';
+		$config['tweet_consumer_key'] = '';
+		$config['tweet_consumer_secret'] = '';
+		$config['google_app_id'] = '';
 		define("FBAPPID", "302044786521719");
 		define("FBAPPSECRET", "f4a643c4fdbe5dd1ced644fd27c32eb3");
 	break;	
 }
 
-
-define("LOGIN_URL", "/login");

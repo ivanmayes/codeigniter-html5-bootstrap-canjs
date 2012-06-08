@@ -11,7 +11,7 @@ class Tpl {
 	private $title = NULL;
 
 	public $title_separator = ' &gt; ';
-	public $layout = 'default';
+	public $layout = 'home';
 
 	private $header = array();
 	private $footer = array();

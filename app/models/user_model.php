@@ -1,22 +1,43 @@
 <?
 Class User_model Extends CI_Model
-{
-    function get_user_by_fbuid($fbuid)
-    {
-    	$this->db->where('fbuid',$fbuid);
-        $query = $this->db->get('users');
-        
-        return $query->result();
-    }
+{		
+	// get user by their social media id
+	function get_user_by_sm($data, $sm_id)
+	{
+		$this->db->select("u.*, up." . $sm_id);
+		$this->db->from("users AS u");
+		$this->db->join("user_profiles AS up", "u.id=up.user_id");
+		$this->db->where($data);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	// Returns user by its email
+	function get_user_by_email($email)
+	{
+		$query = $this->db->query("SELECT * FROM users u, user_profiles up WHERE u.email='$email' and u.id = up.user_id");
+		return $query->result();
+	}
 	
-	function add_user($insert_data)
-    {
-		$insert = $this->db->insert('users', $insert_data);
-		
-		// TODO Tyler, add all the other default rows in other tables in this function
-        
-        return $insert;
-    }
+	function get_user_by_username($username)
+	{
+		$query = $this->db->query("SELECT * FROM users u, user_profiles up WHERE u.username='$username' and u.id = up.user_id");
+		return $query->result();
+	}
+	// a generic update method for user profile
+	function update_user_profile($user_id, $data)
+	{
+		$this->db->where('user_id', $user_id);
+		$this->db->update('user_profiles', $data); 
+	}
+
+	// return the user given the id
+	function get_user($user_id)
+	{
+		$query = $this->db->query("SELECT users.*, user_profiles.* FROM users, user_profiles WHERE " .
+								  "users.id='$user_id' AND user_profiles.user_id='$user_id'");
+		return $query->result();
+	}
     
    
 }

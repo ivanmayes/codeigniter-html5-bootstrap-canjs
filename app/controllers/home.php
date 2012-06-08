@@ -1,20 +1,26 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-/*
- * Code by BrainCube.us - Smart solutions for the Web.
- * @author	Max Degterev <max@braincube.us>
- * @copyright (c) 2011 BrainCube
- */
 
 class Home extends CI_Controller {
 
-	function  __construct() {
+	function __construct()
+	{
 		parent::__construct();
-		//$this->tpl->set_title_separator(' | ')->set_title('Home')->add_footer('js/plugins.js');
+
+		$this->load->helper('url');
+		$this->load->library('tank_auth');
 	}
 
 	public function index() {
-		$data = array();
-		$this->tpl->view('welcome/index', $data, "welcome");
+		if (!$this->tank_auth->is_logged_in()) {
+			redirect('/auth/login/');
+		} else {
+			$data['user_id']	= $this->tank_auth->get_user_id();
+			$data['username']	= $this->tank_auth->get_username();
+			$this->tpl->view('home/index', $data, "home");
+		}
+		
+		//$data = array();
+		//$this->tpl->view('home/index', $data, "home");
 	}
 	
 }

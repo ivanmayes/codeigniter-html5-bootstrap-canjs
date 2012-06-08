@@ -55,10 +55,10 @@ switch (ENVIRONMENT)
 
 $active_record = TRUE;
 
-$db['development']['hostname'] = '174.129.222.124';
-$db['development']['username'] = 'owl_db_user';
-$db['development']['password'] = '7We4YdKnVGyjMMPU';
-$db['development']['database'] = 'owl';
+$db['development']['hostname'] = 'localhost';
+$db['development']['username'] = 'root';
+$db['development']['password'] = 'root';
+$db['development']['database'] = 'boilerplate';
 $db['development']['dbdriver'] = 'mysql';
 $db['development']['dbprefix'] = '';
 $db['development']['pconnect'] = TRUE;
@@ -71,10 +71,10 @@ $db['development']['swap_pre'] = '';
 $db['development']['autoinit'] = TRUE;
 $db['development']['stricton'] = FALSE;
 
-$db['production']['hostname'] = '174.129.222.124';
-$db['production']['username'] = 'owl_db_user';
-$db['production']['password'] = '7We4YdKnVGyjMMPU';
-$db['production']['database'] = 'owl';
+$db['production']['hostname'] = 'localhost';
+$db['production']['username'] = 'root';
+$db['production']['password'] = 'root';
+$db['production']['database'] = 'boilerplate';
 $db['production']['dbdriver'] = 'mysql';
 $db['production']['dbprefix'] = '';
 $db['production']['pconnect'] = TRUE;

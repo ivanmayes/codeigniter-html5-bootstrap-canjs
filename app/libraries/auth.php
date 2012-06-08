@@ -25,7 +25,7 @@ Class Auth
 	
 	public function authFacebook()
 	{
-		require_once 'facebook/facebook.php';
+		require_once 'facebooksdk/facebook.php';
 		
         $this->ci = &get_instance();   
 		$this->ci->facebook = new Facebook(array(
