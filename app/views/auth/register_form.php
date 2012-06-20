@@ -35,6 +35,7 @@ $captcha = array(
 	'maxlength'	=> 8,
 );
 ?>
+<legend>Register an Account</legend>
 <?php echo form_open($this->uri->uri_string()); ?>
 <table>
 	<?php if ($use_username) { ?>
@@ -96,5 +97,5 @@ $captcha = array(
 	<?php }
 	} ?>
 </table>
-<?php echo form_submit('register', 'Register'); ?>
+<button type="submit" class="btn">Register</button>
 <?php echo form_close(); ?>

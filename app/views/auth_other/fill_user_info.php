@@ -1,3 +1,4 @@
+<legend>Fill in user info</legend>
 <?php echo form_open($this->uri->uri_string()); ?>
 	<table>
 		<tr>

@@ -55,9 +55,9 @@ switch (ENVIRONMENT)
 
 $active_record = TRUE;
 
-$db['development']['hostname'] = 'localhost';
+$db['development']['hostname'] = '127.0.0.1';
 $db['development']['username'] = 'root';
-$db['development']['password'] = 'root';
+$db['development']['password'] = '2#perday';
 $db['development']['database'] = 'boilerplate';
 $db['development']['dbdriver'] = 'mysql';
 $db['development']['dbprefix'] = '';
@@ -71,9 +71,9 @@ $db['development']['swap_pre'] = '';
 $db['development']['autoinit'] = TRUE;
 $db['development']['stricton'] = FALSE;
 
-$db['production']['hostname'] = 'localhost';
+$db['production']['hostname'] = '127.0.0.1';
 $db['production']['username'] = 'root';
-$db['production']['password'] = 'root';
+$db['production']['password'] = '2#perday';
 $db['production']['database'] = 'boilerplate';
 $db['production']['dbdriver'] = 'mysql';
 $db['production']['dbprefix'] = '';

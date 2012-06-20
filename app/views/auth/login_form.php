@@ -33,10 +33,9 @@ $captcha = array(
 ?>			
 
   
-
+	<legend>Login</legend>
 	<?php echo form_open($this->uri->uri_string()); ?>
-	
-    <legend>Login</legend>
+	<fieldset>
     <label class="control-label" for="login"><?php echo $login_label; ?>:</label>
     <input type="text" name="login" value="" id="login" maxlength="80" class="input-xlarge">
   
@@ -92,37 +91,49 @@ $captcha = array(
 		<button type="submit" class="btn">Submit</button>
 	</div>
 	
-    <?php echo anchor('/auth/forgot_password/', 'Forgot password'); ?>
+    <?php echo anchor('/auth/forgot_password/', 'Forgot password'); ?> | 
 	<?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', 'Register'); ?>
 
+	</fieldset>
 	<?php echo form_close(); ?>
 	
-	<br/>
-	<table>
-		<tr>
-			<td>
-				<fb:login-button v="2" perms="" length="long" onlogin='window.location="https://graph.facebook.com/oauth/authorize?client_id=<?php echo $this->config->item('facebook_app_id'); ?>&redirect_uri=<?php echo site_url('auth_other/fb_signin'); ?>&amp;r="+window.location.href;'></fb:login-button>
-			</td>
-			<td>
-				<a class="twitter" href="<?php echo site_url('auth_other/twitter_signin'); ?>">
-					<img style="margin-top:5px;" src="<?php echo base_url(); ?>img/twitter_login_button.gif" alt="twitter login" border="0"/>
-				</a>
-			</td>
-			<td>
-				<div id="gfc-button"></div>
-			</td>				
-			<td>
-				<a href="<?php echo site_url('auth_other/google_openid_signin'); ?>">
-					<img style="margin-top:5px;" src="<?php echo base_url(); ?>img/google_connect_button.png" alt="google open id" border="0"/>
-				</a>
-			</td>
-			<td>
-				<a href="<?php echo site_url('auth_other/yahoo_openid_signin'); ?>">
-					<img style="margin-top:5px;" src="<?php echo base_url(); ?>img/yahoo_openid_connect.png" alt="yahoo open id" border="0"/>
-				</a>
-			</td>				
-		</tr>
-	</table>
+	<?php 
+		$facebook = config_item('facebook_app_id');
+		$twitter = config_item('tweet_consumer_key');
+		$google = config_item('google_app_id');
+		$yahoo = config_item('yahoo_openid');
+	?>
+	<div class="row">
+		<? if (!empty($facebook)) { ?>
+		<div class="span3">
+			<fb:login-button v="2" perms="" length="long" onlogin='window.location="https://graph.facebook.com/oauth/authorize?client_id=<?php echo $this->config->item('facebook_app_id'); ?>&redirect_uri=<?php echo site_url('auth_other/fb_signin'); ?>&amp;r="+window.location.href;'></fb:login-button>
+		</div>
+		<? }
+			if (!empty($twitter)) { ?>
+		<div class="span3">
+			<a class="twitter" href="<?php echo site_url('auth_other/twitter_signin'); ?>">
+				<img style="margin-top:5px;" src="<?php echo base_url(); ?>img/twitter_login_button.gif" alt="twitter login" border="0"/>
+			</a>
+		</div>
+		<? }
+			if (!empty($google)) { ?>
+		<div class="span3">
+			<div id="gfc-button"></div>
+		</div>
+		<div class="span3">
+			<a href="<?php echo site_url('auth_other/google_openid_signin'); ?>">
+				<img style="margin-top:5px;" src="<?php echo base_url(); ?>img/google_connect_button.png" alt="google open id" border="0"/>
+			</a>
+		</div>
+		<? }
+			if (!empty($yahoo)) { ?>
+		<div class="span3">
+			<a href="<?php echo site_url('auth_other/yahoo_openid_signin'); ?>">
+				<img style="margin-top:5px;" src="<?php echo base_url(); ?>img/yahoo_openid_connect.png" alt="yahoo open id" border="0"/>
+			</a>
+		</div>
+		<? } ?>
+	</div>
 	
 	<p id="viewer-info"></p>
 		

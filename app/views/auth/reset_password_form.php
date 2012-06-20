@@ -12,6 +12,7 @@ $confirm_new_password = array(
 	'size' 	=> 30,
 );
 ?>
+ <legend>Reset your Password</legend>
 <?php echo form_open($this->uri->uri_string()); ?>
 <table>
 	<tr>
@@ -25,5 +26,5 @@ $confirm_new_password = array(
 		<td style="color: red;"><?php echo form_error($confirm_new_password['name']); ?><?php echo isset($errors[$confirm_new_password['name']])?$errors[$confirm_new_password['name']]:''; ?></td>
 	</tr>
 </table>
-<?php echo form_submit('change', 'Change Password'); ?>
+<button type="submit" class="btn">Change Password</button>
 <?php echo form_close(); ?>

@@ -43,9 +43,7 @@ switch(ENVIRONMENT) {
 		$config['tweet_consumer_key'] = '';
 		$config['tweet_consumer_secret'] = '';
 		$config['google_app_id'] = '';
-		define("FBAPPID", "186544724784696");
-		define("FBAPPSECRET", "e4590db6841ad00b5bc077262bf854ae");
-		
+		$config['yahoo_openid'] = 0;
 	break;
 	default:
 		$config['facebook_app_id'] = '186544724784696';
@@ -54,8 +52,7 @@ switch(ENVIRONMENT) {
 		$config['tweet_consumer_key'] = '';
 		$config['tweet_consumer_secret'] = '';
 		$config['google_app_id'] = '';
-		define("FBAPPID", "302044786521719");
-		define("FBAPPSECRET", "f4a643c4fdbe5dd1ced644fd27c32eb3");
+		$config['yahoo_openid'] = 0;
 	break;	
 }
 
