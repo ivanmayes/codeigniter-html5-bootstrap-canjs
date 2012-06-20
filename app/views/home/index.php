@@ -6,8 +6,8 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Get In!</li>
-              <li><a href="#" class="login">Login</a></li>
-              <li><a href="#" class="login">Signup</a></li>
+              <li><a href="/auth/login" class="login">Login</a></li>
+              <li><a href="/auth/register" class="login">Signup</a></li>
               <li class="nav-header">Sidebar</li>
               <li><a href="#">Link</a></li>
               <li><a href="#">Link</a></li>

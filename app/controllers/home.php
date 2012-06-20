@@ -11,16 +11,16 @@ class Home extends CI_Controller {
 	}
 
 	public function index() {
-		if (!$this->tank_auth->is_logged_in()) {
+		/*if (!$this->tank_auth->is_logged_in()) {
 			redirect('/auth/login/');
 		} else {
 			$data['user_id']	= $this->tank_auth->get_user_id();
 			$data['username']	= $this->tank_auth->get_username();
 			$this->tpl->view('home/index', $data, "home");
-		}
+		}*/
 		
-		//$data = array();
-		//$this->tpl->view('home/index', $data, "home");
+		$data = array();
+		$this->tpl->view('home/index', $data, "home");
 	}
 	
 }

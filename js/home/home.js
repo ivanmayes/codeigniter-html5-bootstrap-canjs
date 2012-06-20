@@ -10,11 +10,11 @@ $(function() {
 	 * Facebook Buttons
 	 */
 	console.log($('.login'));
-	$('.login').click(function(ev) 
+	/*$('.login').click(function(ev) 
 	{   
 		ev.preventDefault();
 		fbLogin(); 
-	});
+	});*/
 	
 	/**
 	 * Facebook Login

@@ -40,7 +40,7 @@ $project = base_url();
 </head>
 <body>
 	
-	<div id="main" role="main">
+	<div id="main" role="main" class="container">
 		<?php echo $layout_content; ?>
     </div>
 	
@@ -49,24 +49,6 @@ $project = base_url();
 	<footer>
 		<p><?php echo $layout_year.' &copy; '.$layout_company; ?></p>
 	</footer>
-
-	<?php /* Jquery
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-	*/?>
-
-	<!-- Facebook JS API-->
-	<div id="fb-root"></div>
-	<script src="http://connect.facebook.net/en_US/all.js"></script>
-	<script>
-	  FB.init({
-	    appId  : <?php echo FBAPPID ?>,
-	    status : true, // check login status
-	    cookie : true, // enable cookies to allow the server to access the session
-	    xfbml  : true,  // parse XFBML
-	    oauth : true
-	  });
-	</script>
 	
     <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
