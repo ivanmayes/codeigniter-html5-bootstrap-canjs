@@ -30,7 +30,9 @@ Set all config variables in config/application.php
 # Views and Layouts
 
 Views are run through the Tpl library. Here is an example call:
+
 	$this->tpl->view('app/dashboard', $data, "app");
+	
 The first parameter is is the location of the page content (in this case views/app/dashboard.php)
 The second parameter is the data to be passed to your content
 The third parameter defines your layout shell that forms the header/footer and any permanent code needed on every page
@@ -39,7 +41,9 @@ The third parameter defines your layout shell that forms the header/footer and a
 # Sending Ajax
 
 There is an ajax library designed to filter output back to the front-end.  
+
 	$this->ajax->output(array('data' => $data, 'error' => $this->ci->error, 'errormsg' => $this->ci->errormsg));
+	
 Errors are set in the construct as false, minimizing the amount of error code that you have to write.  Here's an example of an ajax function:
 	
 	public function authenticateLogin()
