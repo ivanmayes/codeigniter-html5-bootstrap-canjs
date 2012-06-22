@@ -31,7 +31,7 @@ class Auth extends CI_Controller
 		if ($this->tank_auth->is_logged_in()) {									// logged in
 			redirect('/dashboard/');
 
-		} elseif ($this->tank_auth->is_logged_in(FALSE)) {						// logged in, not activated
+		} elseif ($this->tank_auth->is_logged_in(FALSE)) {				// logged in, not activated
 			redirect('/auth/send_again/');
 		} 
 		else 
@@ -67,8 +67,8 @@ class Auth extends CI_Controller
 						$this->form_validation->set_value('password'),
 						$this->form_validation->set_value('remember'),
 						$data['login_by_username'],
-						$data['login_by_email'])) {								// success
-					redirect('');
+						$data['login_by_email'])) {							// success
+					redirect('/dashboard/');
 
 				} else {
 					$errors = $this->tank_auth->get_error_message();
@@ -78,7 +78,7 @@ class Auth extends CI_Controller
 					} elseif (isset($errors['not_activated'])) {				// not activated user
 						redirect('/auth/send_again/');
 
-					} else {													// fail
+					} else {															// fail
 						foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
 					}
 				}
@@ -104,7 +104,6 @@ class Auth extends CI_Controller
 	function logout()
 	{
 		$this->tank_auth->logout();
-
 		$this->_show_message($this->lang->line('auth_message_logged_out'));
 	}
 

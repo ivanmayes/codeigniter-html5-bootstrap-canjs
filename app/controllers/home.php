@@ -11,6 +11,7 @@ class Home extends CI_Controller {
 	}
 
 	public function index() {
+		// Reenable if you want the main page to be a login screen
 		/*if (!$this->tank_auth->is_logged_in()) {
 			redirect('/auth/login/');
 		} else {

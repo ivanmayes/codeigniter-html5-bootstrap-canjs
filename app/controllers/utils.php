@@ -7,6 +7,7 @@ Class Utils Extends CI_Controller
         parent::__construct(); $this->ci = &get_instance();
 		$this->ci->error = false; $this->ci->errormsg = "";
     }
+	
     public function log_error()
     {
         $uid = $this->input->post('uid');
@@ -19,6 +20,7 @@ Class Utils Extends CI_Controller
        $data= $this->errors->captureError("javascript", $severity, $this->ci->fbuid, $message, $filepath, $line);
 	   $this->ajax->output(array('data' => $data, 'error' => $this->ci->error, 'errormsg' => $this->ci->errormsg));
     }
+	
     public function pinfo()
     {
         if($this->auth->is_admin())

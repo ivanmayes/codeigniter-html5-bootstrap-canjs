@@ -5,11 +5,11 @@ class Dashboard extends CI_Controller {
 	function  __construct() {
 		parent::__construct(); $this->ci = &get_instance();
 		$this->ci->error = false; $this->ci->errormsg = "";
+		$this->load->library('auth');
 	}
 
 	public function index() {
 		// Uncomment to only allow authenticated users
-		//$this->auth->authenticate(true);
 		$data = array();
 		if ($this->input->is_ajax_request()) {
 			$this->load->view('ajax/home_view', $data);
@@ -18,7 +18,8 @@ class Dashboard extends CI_Controller {
 		}
 	}
 	
-	public function ajax_test() {
+	public function ajax_example() {
+		// Authenticate to make sure we are getting a valid request from a user
 		$this->auth->authenticate();
 		$data = "Cool data to send back";
 		
