@@ -12,6 +12,6 @@
 			<td style="color: red;"><?php echo form_error('email'); ?><?php echo isset($errors['email'])?$errors['email']:''; ?></td>
 		</tr>
 	</table>
-	<input type="submit" name="submit" value="Let me in" />
+	<button class="btn btn-primary" type="submit">Let me in!</button>
 <?php echo form_close(); ?>
 				

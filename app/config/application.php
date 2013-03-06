@@ -44,6 +44,9 @@ switch(ENVIRONMENT) {
 		$config['tweet_consumer_secret'] = '';
 		$config['google_app_id'] = '';
 		$config['yahoo_openid'] = 0;
+
+		$config['home_analytics_id'] = 'UA-XXXXX-X';
+		$config['app_analytics_id'] = 'UA-XXXXX-X';
 	break;
 	default:
 		$config['facebook_app_id'] = '186544724784696';
@@ -53,6 +56,9 @@ switch(ENVIRONMENT) {
 		$config['tweet_consumer_secret'] = '';
 		$config['google_app_id'] = '';
 		$config['yahoo_openid'] = 0;
+
+		$config['home_analytics_id'] = 'UA-XXXXX-X';
+		$config['app_analytics_id'] = 'UA-XXXXX-X';
 	break;	
 }
 

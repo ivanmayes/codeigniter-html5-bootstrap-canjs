@@ -22,8 +22,8 @@ class auth_other extends CI_Controller
 		$fb_user = $this->facebook->getUser();
 		if( isset($fb_user))
 		{
-			$this->session->set_userdata('facebook_id', $fb_user['id']);
-			$user = $this->user_model->get_user_by_sm(array('facebook_id' => $fb_user['id']), 'facebook_id');
+			$this->session->set_userdata('facebook_id', $fb_user);
+			$user = $this->user_model->get_user_by_sm(array('facebook_id' => $fb_user), 'facebook_id');
 			if( sizeof($user) == 0) 
 			{ 
 				redirect('auth_other/fill_user_info', 'refresh'); 
@@ -278,7 +278,7 @@ class auth_other extends CI_Controller
 		// Run the validation
 		if ($this->form_validation->run() == false ) 
 		{
-			$this->load->view('auth_other/fill_user_info'); 
+			$this->tpl->view('auth_other/fill_user_info', null, "home");
 		}
 		else
 		{

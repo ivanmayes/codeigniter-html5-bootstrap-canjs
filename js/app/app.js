@@ -21,7 +21,7 @@ steal(
 	//'/js/libs/canjs/can.observe.setter.js',
 	
 	// Jquery++ DOM Helpers + drag/drop/resize ( http://jquerypp.com/ )
-	'/js/libs/jquerypp/jquerypp.js',
+	'/js/libs/jquerypp/jquerypp.min.js',
 	
 	// Underscore.js Low Level Jquery additions
 	'http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js',

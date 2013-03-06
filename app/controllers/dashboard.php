@@ -5,22 +5,19 @@ class Dashboard extends CI_Controller {
 	function  __construct() {
 		parent::__construct(); $this->ci = &get_instance();
 		$this->ci->error = false; $this->ci->errormsg = "";
-		$this->load->library('auth');
 	}
 
 	public function index() {
 		// Uncomment to only allow authenticated users
-		$data = array();
-		if ($this->input->is_ajax_request()) {
-			$this->load->view('ajax/home_view', $data);
-		} else {
-			$this->tpl->view('app/dashboard', $data, "app");
-		}
+		$data = array(
+			"js" => array(
+				// Add any vars to translate to js
+			)
+		);
+		$this->tpl->view('app/dashboard', $data, "app");
 	}
 	
 	public function ajax_example() {
-		// Authenticate to make sure we are getting a valid request from a user
-		$this->auth->authenticate();
 		$data = "Cool data to send back";
 		
 		// If there was an error anywhere in this funciton, i would just change

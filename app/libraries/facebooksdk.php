@@ -1,7 +1,18 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class facebook 
+class facebooksdk
 {
+	function __construct()
+    {
+        require_once 'facebooksdk/facebook.php';
+		
+        $this->ci = &get_instance();   
+		$this->ci->facebook = new Facebook(array(
+		  'appId'  => $this->ci->config->item('facebook_app_id'),
+		  'secret' => $this->ci->config->item('facebook_app_secret'),
+		));   
+    }
+
 	function get_facebook_cookie() 
 	{
 		// get the fb app id, and secret from CI config source
@@ -31,8 +42,10 @@ class facebook
 	// get the user from the facebook cookie
 	function getUser()
 	{
-		$cookie = $this->get_facebook_cookie();
-		$user = @json_decode(file_get_contents( 'https://graph.facebook.com/me?access_token=' .	$cookie['access_token']), true);
+		echo $facebook->getUser();
+		$user = $facebook->getUser();
+		//$cookie = $this->get_facebook_cookie();
+		//$user = @json_decode(file_get_contents( 'https://graph.facebook.com/me?access_token=' .	$cookie['access_token']), true);
 		return $user;
 	}
 	

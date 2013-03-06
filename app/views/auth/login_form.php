@@ -82,7 +82,7 @@ $captcha = array(
 	
 	<div>
 		<label class="checkbox">
-	        <input type="checkbox" name="remember" value="1" id="remember" style="margin:0;padding:0">
+	        <input type="checkbox" name="remember" value="1" id="remember">
 	        Remember me
 	    </label>
     </div>
@@ -145,7 +145,7 @@ $captcha = array(
 	    	if (response.session) 
 	    	{
 	      		// A user has logged in, and a new cookie has been saved
-				//window.location.reload(true);
+				window.location.reload(true);
 	    	} 
 	    	else 
 	    	{

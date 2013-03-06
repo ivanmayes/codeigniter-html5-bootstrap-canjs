@@ -9,7 +9,7 @@ $project = base_url();
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
+	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 	<title><?php echo $layout_company.$layout_title; ?></title>
@@ -27,8 +27,7 @@ $project = base_url();
 	*/?>
 	<meta http-equiv="cleartype" content="on">
 
-	<link rel="stylesheet/less" type="text/css" href="<?php echo $project; ?>css/bootstrap/bootstrap.less">
-	<link rel="stylesheet/less" type="text/css" href="<?php echo $project; ?>css/style.less">
+	<link rel="stylesheet" type="text/css" href="<?php echo $project; ?>css/style.css">
 
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
 	
@@ -63,7 +62,7 @@ $project = base_url();
 	<![endif]-->
 
 	<script>
-		var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+		var _gaq=[['_setAccount','<?php echo $this->config->item("app_analytics_id"); ?>'],['_trackPageview']];
 		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 		s.parentNode.insertBefore(g,s)}(document,'script'));

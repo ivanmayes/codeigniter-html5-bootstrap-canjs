@@ -28,15 +28,12 @@ $project = base_url();
 	*/?>
 	<meta http-equiv="cleartype" content="on">
 
-	<link rel="stylesheet/less" type="text/css" href="<?php echo $project; ?>css/bootstrap/bootstrap.less">
-	<link rel="stylesheet/less" type="text/css" href="<?php echo $project; ?>css/style.less">
+	<link rel="stylesheet" type="text/css" href="<?php echo $project; ?>css/style.css">
 
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
 	
 	<?php /* Respond is a polyfill for min/max-width CSS3 Media Queries */ ?>
 	<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>-->
-	
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.3.0/less-1.3.0.min.js"></script>
 	<?php echo $this->tpl->get_header(); ?>
 
 </head>
@@ -57,7 +54,7 @@ $project = base_url();
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
-            <p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>
+            <p class="navbar-text pull-right">Logged in as <a href="#"><?=$this->tank_auth->get_username()?></a></p>
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -73,8 +70,18 @@ $project = base_url();
 		<p><?php echo $layout_year.' &copy; '.$layout_company; ?></p>
 	</footer>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+	<?php
+		// Insert php vars into javascript		
+		if (!empty($js)) {
+			echo "<script>\n";
+			foreach ($js as $key => $value) {
+				echo "var $key ='$value';\n";
+			}
+			echo "</script>\n\n";
+		}
+	?>
 
 	<script type='text/javascript' src='<?php echo $project; ?>js/steal/steal.js?app'></script>
 	<?php echo $this->tpl->get_footer(); ?>
@@ -85,11 +92,11 @@ $project = base_url();
 	<![endif]-->
 
 	<script>
-		var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+		var _gaq=[['_setAccount','<?php echo $this->config->item("app_analytics_id"); ?>'],['_trackPageview']];
 		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 		s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
+	</script>
 
 </body>
 </html>
